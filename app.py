@@ -1,5 +1,5 @@
 # requir library
-import nltk
+import nltk # type: ignore
 import streamlit as st
 import pickle
 import docx  # Extract text from Word file
