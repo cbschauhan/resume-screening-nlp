@@ -1,8 +1,3 @@
-pip install nltk
-pip install streamlit
-pip install PyPDF2
-pip install python-docx
-pip install scikit-learn
 # requir library
 import nltk
 import streamlit as st
