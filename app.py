@@ -5,7 +5,7 @@ import pickle
 import docx
 import PyPDF2
 import re
-from Crypto.Cipher import AES
+# from Crypto.Cipher import AES
 
 
 
@@ -59,33 +59,33 @@ def extract_docx(file):
     return text
 
 
-# ---------------------------
-# Extract text from PDF
-# ---------------------------
-def extract_pdf(file):
-    from PyPDF2.errors import DependencyError
+# # ---------------------------
+# # Extract text from PDF
+# # ---------------------------
+# def extract_pdf(file):
+#     from PyPDF2.errors import DependencyError
 
-    try:
-        reader = PyPDF2.PdfReader(file)
-    except DependencyError:
-        st.error("PyCryptodome is required for AES-encrypted PDFs. Install with `pip install pycryptodome`.")
-        return ""
+#     try:
+#         reader = PyPDF2.PdfReader(file)
+#     except DependencyError:
+#         st.error("PyCryptodome is required for AES-encrypted PDFs. Install with `pip install pycryptodome`.")
+#         return ""
 
-    # Decrypt if encrypted
-    if reader.is_encrypted:
-        try:
-            reader.decrypt("")  # try empty password
-        except Exception as e:
-            st.error(f"Failed to decrypt PDF: {e}")
-            return ""
+#     # Decrypt if encrypted
+#     if reader.is_encrypted:
+#         try:
+#             reader.decrypt("")  # try empty password
+#         except Exception as e:
+#             st.error(f"Failed to decrypt PDF: {e}")
+#             return ""
 
-    text = ""
-    for page in reader.pages:
-        page_text = page.extract_text()
-        if page_text:
-            text += page_text
+#     text = ""
+#     for page in reader.pages:
+#         page_text = page.extract_text()
+#         if page_text:
+#             text += page_text
 
-    return text
+#     return text
 
 
 # ---------------------------
