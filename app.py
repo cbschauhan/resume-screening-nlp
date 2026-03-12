@@ -146,10 +146,10 @@ def main():
         keyword_matches, matched_count = find_resume_keywords(resume_text)
 
         if matched_count < 3:
-            st.error("❌ Please only upload resume (at least 2 keywords required).")
+            st.error("❌ Please only upload resume files.")
             return
 
-        st.info(f"✅ Found {matched_count} resume keywords. Proceeding...")
+        st.info(f"✅ Thanks for uploading your resume! Detected {matched_count} relevant sections.")
 
         cleaned_resume = clean_resume(resume_text)
 
