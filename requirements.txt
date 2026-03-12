@@ -3,3 +3,5 @@ streamlit
 PyPDF2
 python-docx
 scikit-learn
+pycryptodome
+Crypto
